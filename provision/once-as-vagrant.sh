@@ -69,23 +69,26 @@ php yii seed/up <<< "yes"
 php yii db/import dev <<< "no"
 
 
-#info "Cloning CPS project from github"
-#git clone https://${github_token}@github.com/TempleSuite/cps-yii2.git /var/www/html/cps
-#info "Done!"
+info "Cloning CPS project from github"
+git clone https://${github_token}@github.com/TempleSuite/cps-yii2.git /var/www/html/cps
+info "Done!"
 
-#info "CPS"
-#info "Install project dependencies"
-#cd /var/www/html/cps
-#composer --no-progress --prefer-dist install
+info "CPS"
+info "Install project dependencies"
+cd /var/www/html/cps
+composer --no-progress --prefer-dist install
 
-#info "Init project"
-#./init --env=Development --overwrite=n
+info "Init project"
+./init --env=Development --overwrite=n
 
-#info "Apply migrations"
-#php yii migrate/up <<< "yes"
+info "Apply migrations"
+php yii migrate/up <<< "yes"
 
 info "Create bash-aliases 'erec' for vagrant user"
 echo 'alias erec="cd /var/www/html/erec"' | tee /home/vagrant/.bash_aliases
+
+info "Create bash-aliases 'cps' for vagrant user"
+echo 'alias cps="cd /var/www/html/cps"' | tee /home/vagrant/.bash_aliases
 
 info "Enabling colorized prompt for guest console"
 sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/" /home/vagrant/.bashrc
