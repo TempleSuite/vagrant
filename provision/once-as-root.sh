@@ -81,14 +81,14 @@ echo "Done!"
 
 info "Enabling site configuration"
 ln -s /var/www/html/erec/vagrant/nginx/app.conf /etc/nginx/sites-enabled/erec.conf
-ln -s /var/www/html/cps/vagrant/nginx/app.conf /etc/nginx/sites-enabled/cps.conf
+#ln -s /var/www/html/cps/vagrant/nginx/app.conf /etc/nginx/sites-enabled/cps.conf
 echo "Done!"
 
 info "Initailize databases for MySQL"
 mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS erec"
 mysql -uroot -pmypass <<< "CREATE DATABASE IF NOT EXISTS erec_test"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps"
-mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps_test"
+#mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps"
+#mysql -uroot <<< "CREATE DATABASE IF NOT EXISTS cps_test"
 
 info "Install composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

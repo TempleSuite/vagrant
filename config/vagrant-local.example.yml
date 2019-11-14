@@ -4,13 +4,13 @@ github_token: <enter your token>
 # You can generate it here: https://github.com/settings/tokens
 
 # Guest OS timezone
-timezone: America/Vancouver
+timezone: US/Pacific
 
 # Are we need check box updates for every 'vagrant up'?
 box_check_update: false
 
 # Virtual machine name
-machine_name: mais
+machine_name: erec
 
 # Virtual machine IP
 ip: 192.168.83.137
