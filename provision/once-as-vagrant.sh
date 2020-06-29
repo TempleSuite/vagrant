@@ -32,7 +32,7 @@ composer global require "codeception/codeception=2.0.*" "codeception/specify=*" 
 echo 'export PATH=/home/vagrant/.config/composer/vendor/bin:$PATH' | tee -a /home/vagrant/.profile
 
 info "Cloning erec project from github"
-git clone -b dev https://${github_token}@github.com/TempleSuite/erec-yii2.git /var/www/html/erec
+git clone -b staging-v2 https://${github_token}@github.com/TempleSuite/erec-yii2.git /var/www/html/erec
 info "Done!"
 
 info "EREC"
@@ -51,7 +51,7 @@ ALIAS_EREC=erec.test
 YII_ENV=dev
 YII_DEBUG=true
 
-BUGSNAG_API_KEY=a8b6d1deb54fb7a74a7a99ee19c17c1d" > /var/www/html/erec/.env
+#BUGSNAG_API_KEY=a8b6d1deb54fb7a74a7a99ee19c17c1d" > /var/www/html/erec/.env
 
 info "Init project"
 ./init --env=Development --overwrite=n

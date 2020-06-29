@@ -24,6 +24,7 @@
 
 ## vagrant-hostmanager-start id: 32862378-d336-4d75-9298-eb48157c84a1
 192.168.83.137 erec.test
+192.168.83.137 erec-upgrade.test
 192.168.83.137	erec-backend.test
 ## vagrant-hostmanager-end
 
