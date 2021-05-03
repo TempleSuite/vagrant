@@ -51,7 +51,7 @@ apt-get install zip gzip git curl nginx mysql-server apt-get install php7.4-fpm 
 pecl install xdebug
 echo 'zend_extension="'$(find / -name 'xdebug.so')'"' >> /etc/php/7.4/fpm/php.ini
 echo 'xdebug.remote_enable = 1' >> /etc/php/7.4/fpm/php.ini
-echo 'xdebug.remote_autostart = 0' >> /etc/php/7.4/fpm/php.ini
+echo 'xdebug.remote_autostart = 1' >> /etc/php/7.4/fpm/php.ini
 echo 'xdebug.remote_connect_back=1' >> /etc/php/7.4/fpm/php.ini
 #echo 'xdebug.default_enable = 1' >> /etc/php/7.4/fpm/php.ini
 #echo 'xdebug.idekey = "netbeans-xdebug"' >> /etc/php/7.4/php.ini
