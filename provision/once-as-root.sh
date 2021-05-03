@@ -47,17 +47,17 @@ apt-get upgrade -y
 info "Install additional LAMP software"
 add-apt-repository ppa:ondrej/php
 apt-get update
-apt-get install zip gzip git curl nginx mysql-server php7.1 php7.1-cli php7.1-common php7.1-mysql php7.1-fpm php7.1-curl php7.1-gd php7.1-bz2 php7.1-mcrypt php7.1-json php7.1-dev php7.1-tidy php7.1-mbstring php7.1-bcmath php7.1-intl php7.1-xsl php-xml php-redis php-memcached php-pear <<< "y"
+apt-get install zip gzip git curl nginx mysql-server apt-get install php7.4-fpm php7.4-cli php7.4-common php7.4-mysql php7.4-curl php7.4-gd php7.4-dev php7.4-mbstring php7.4-bz2 php7.4-json php7.4-tidy php7.4-bcmath php7.4-intl php7.4-xsl php-redis php-memcached php-pear <<< "y"
 pecl install xdebug
-echo 'zend_extension="'$(find / -name 'xdebug.so')'"' >> /etc/php/7.1/fpm/php.ini
-echo 'xdebug.remote_enable = 1' >> /etc/php/7.1/fpm/php.ini
-echo 'xdebug.remote_autostart = 0' >> /etc/php/7.1/fpm/php.ini
-echo 'xdebug.remote_connect_back=1' >> /etc/php/7.1/fpm/php.ini
-#echo 'xdebug.default_enable = 1' >> /etc/php/7.1/fpm/php.ini
-#echo 'xdebug.idekey = "netbeans-xdebug"' >> /etc/php/7.1/php.ini
-#echo 'xdebug.remote_port = 9000' >> /etc/php/7.1/fpm/php.ini
-#echo 'xdebug.remote_handler=dbgp' >> /etc/php/7.1/fpm/php.ini
-#echo 'xdebug.remote_host=10.0.2.2' >> /etc/php/7.1/fpm/php.ini
+echo 'zend_extension="'$(find / -name 'xdebug.so')'"' >> /etc/php/7.4/fpm/php.ini
+echo 'xdebug.remote_enable = 1' >> /etc/php/7.4/fpm/php.ini
+echo 'xdebug.remote_autostart = 0' >> /etc/php/7.4/fpm/php.ini
+echo 'xdebug.remote_connect_back=1' >> /etc/php/7.4/fpm/php.ini
+#echo 'xdebug.default_enable = 1' >> /etc/php/7.4/fpm/php.ini
+#echo 'xdebug.idekey = "netbeans-xdebug"' >> /etc/php/7.4/php.ini
+#echo 'xdebug.remote_port = 9000' >> /etc/php/7.4/fpm/php.ini
+#echo 'xdebug.remote_handler=dbgp' >> /etc/php/7.4/fpm/php.ini
+#echo 'xdebug.remote_host=10.0.2.2' >> /etc/php/7.4/fpm/php.ini
 
 info "Installing Node.JS and NPM"
 curl -sL https://deb.nodesource.com/setup_11.x | bash -
@@ -69,10 +69,10 @@ sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 echo "Done!"
 
 info "Configure PHP-FPM"
-sed -i 's/user = www-data/user = vagrant/g' /etc/php/7.1/fpm/pool.d/www.conf
-sed -i 's/group = www-data/group = vagrant/g' /etc/php/7.1/fpm/pool.d/www.conf
-sed -i 's/owner = www-data/owner = vagrant/g' /etc/php/7.1/fpm/pool.d/www.conf
-chown vagrant:vagrant /run/php/php7.1-fpm.sock
+sed -i 's/user = www-data/user = vagrant/g' /etc/php/7.4/fpm/pool.d/www.conf
+sed -i 's/group = www-data/group = vagrant/g' /etc/php/7.4/fpm/pool.d/www.conf
+sed -i 's/owner = www-data/owner = vagrant/g' /etc/php/7.4/fpm/pool.d/www.conf
+chown vagrant:vagrant /run/php/php7.4-fpm.sock
 echo "Done!"
 
 info "Configure NGINX"
@@ -96,3 +96,4 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 #info "Install Ruby-SASS"
 #sudo apt-get -y install ruby2.0 ruby2.0-dev
 #sudo gem2.0 install sass
+ 
