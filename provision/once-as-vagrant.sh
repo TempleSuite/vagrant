@@ -32,7 +32,7 @@ composer global require "codeception/codeception=2.0.*" "codeception/specify=*" 
 echo 'export PATH=/home/vagrant/.config/composer/vendor/bin:$PATH' | tee -a /home/vagrant/.profile
 
 info "Cloning erec project from github"
-git clone -b staging-v2 https://${github_token}@github.com/TempleSuite/erec-yii2.git /var/www/html/erec
+git clone -b dev https://${github_token}@github.com/TempleSuite/erec-yii2.git /var/www/html/erec
 info "Done!"
 
 info "EREC"
